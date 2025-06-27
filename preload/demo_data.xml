@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Datos demo para productos textiles -->
+    <record id="product_demo_uniforme_escolar" model="product.template">
+        <field name="name">Uniforme Escolar Demo</field>
+        <field name="type">product</field>
+        <field name="tipo_producto_textil">uniforme</field>
+        <field name="composicion_textil">Algodón 100%</field>
+        <field name="tipo_tela">algodon</field>
+        <field name="list_price">150.00</field>
+    </record>
+</odoo>

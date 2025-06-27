@@ -30,8 +30,8 @@
         'data/product_data.xml',
         
         # VIEWS
-        'views/partner_views.xml',
         'views/product_views.xml',
+        'views/partner_views.xml',
     ],
     'demo': [
         'demo/product_demo.xml',  # Datos demo opcionales

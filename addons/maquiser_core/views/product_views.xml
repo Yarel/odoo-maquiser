@@ -1,20 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Formulario de Productos (Heredado) -->
+    <menuitem id="menu_maquiser_root"
+          name="Maquiser"
+          sequence="10"
+          groups="base.group_user"/>
+
+    <!-- Vista de formulario heredada -->
     <record id="view_product_template_form_maquiser" model="ir.ui.view">
         <field name="name">product.template.form.maquiser</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
-            <!-- Campos personalizados en sección general -->
+            <!-- Campos en sección general -->
             <xpath expr="//field[@name='name']" position="after">
                 <field name="tipo_producto_textil" widget="radio"/>
                 <field name="composicion_textil"/>
             </xpath>
 
-            <!-- Pestaña adicional para datos textiles -->
+            <!-- Pestaña adicional -->
             <xpath expr="//page[@name='inventory']" position="after">
-                <page string="Detalles Textiles" name="textile_details">
+                <page string="Detalles Textiles">
                     <group>
                         <field name="tipo_tela"/>
                         <field name="gramaje"/>
@@ -36,4 +40,29 @@
             </xpath>
         </field>
     </record>
+
+    <!-- Menú de Productos Textiles -->
+    <menuitem id="menu_maquiser_productos" 
+              name="Productos Textiles" 
+              parent="menu_maquiser_root" 
+              sequence="30"
+              groups="base.group_user"/>
+
+    <record id="action_product_template_maquiser" model="ir.actions.act_window">
+        <field name="name">Productos Textiles</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('tipo_producto_textil','!=',False)]</field>
+        <field name="context">{'default_tipo_producto_textil': 'uniforme'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea tu primer producto textil</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_product_template_maquiser" 
+              name="Catálogo Textil" 
+              parent="menu_maquiser_productos" 
+              action="action_product_template_maquiser" 
+              sequence="10"
+              groups="base.group_user"/>
 </odoo>

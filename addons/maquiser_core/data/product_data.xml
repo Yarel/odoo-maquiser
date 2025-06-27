@@ -1,4 +1,3 @@
-<!-- maquiser_core/data/product_data.xml -->
 <odoo>
   <record id="product_uniforme_escolar_varon" model="product.template">
     <field name="name">Uniforme escolar varón</field>
