@@ -1,21 +1,71 @@
 <odoo>
-    <record id="res_partner_ejercito" model="res.partner">
-        <field name="name">Ejército de Bolivia</field>
-        <field name="vat">123456789</field>
-        <field name="customer_rank">1</field>
-        <field name="street">Av. 6 de Agosto</field>
-        <field name="city">La Paz</field>
-        <field name="country_id" ref="base.bo"/>
-        <field name="company_type">company</field>
+    <!-- Empresas (clientes de uniformes) -->
+    <record id="partner_emp_uniformes_1" model="res.partner">
+        <field name="name">Uniformes Andinos SRL</field>
+        <field name="tipo_documento">nit</field>
+        <field name="numero_documento">1234567890</field>
+        <field name="es_cliente_uniformes">1</field>
+        <field name="street">Av. América 456</field>
+        <field name="city">Cochabamba</field>
+        <field name="phone">+591 76432100</field>
+        <field name="email">contacto@andinos.com</field>
+        <field name="category_id" eval="[(6, 0, [ref('maquiser_core.cat_cliente_vip')])]"/>
     </record>
 
-    <record id="res_partner_proveedor_telas" model="res.partner">
-        <field name="name">Textiles Andinos S.A.</field>
-        <field name="vat">987654321</field>
-        <field name="supplier_rank">1</field>
-        <field name="street">Calle Industrial 456</field>
-        <field name="city">Santa Cruz</field>
-        <field name="country_id" ref="base.bo"/>
-        <field name="company_type">company</field>
+    <record id="partner_emp_uniformes_2" model="res.partner">
+        <field name="name">Fábrica El Alto Textil</field>
+        <field name="tipo_documento">nit</field>
+        <field name="numero_documento">2233445566</field>
+        <field name="es_cliente_uniformes">1</field>
+        <field name="street">Calle 7 #85, Zona 12 de Octubre</field>
+        <field name="city">El Alto</field>
+        <field name="phone">+591 71234567</field>
+        <field name="email">ventas@elaltotextil.bo</field>
     </record>
+
+    <!-- Personas (clientes asociados) -->
+    <record id="partner_pers_cliente_1" model="res.partner">
+        <field name="name">Juan Pérez</field>
+        <field name="parent_id" ref="partner_emp_uniformes_1"/>
+        <field name="tipo_documento">ci</field>
+        <field name="numero_documento">8574123 LP</field>
+        <field name="email">juan.perez@andinos.com</field>
+        <field name="phone">+591 78945612</field>
+        <field name="es_cliente_uniformes">1</field>
+    </record>
+
+    <record id="partner_pers_cliente_2" model="res.partner">
+        <field name="name">María Gómez</field>
+        <field name="parent_id" ref="partner_emp_uniformes_2"/>
+        <field name="tipo_documento">ci</field>
+        <field name="numero_documento">9021345 CB</field>
+        <field name="email">maria.gomez@elaltotextil.bo</field>
+        <field name="phone">+591 72345678</field>
+        <field name="es_cliente_uniformes">1</field>
+    </record>
+
+    <!-- Proveedores textiles -->
+    <record id="partner_emp_proveedor_1" model="res.partner">
+        <field name="name">Importadora Textil Sur</field>
+        <field name="tipo_documento">nit</field>
+        <field name="numero_documento">9988776655</field>
+        <field name="es_proveedor_textil">1</field>
+        <field name="street">Calle Comercio 77</field>
+        <field name="city">Sucre</field>
+        <field name="phone">+591 76543210</field>
+        <field name="email">ventas@textilsur.bo</field>
+        <field name="category_id" eval="[(6, 0, [ref('maquiser_core.cat_proveedor_estrategico')])]"/>
+    </record>
+
+    <record id="partner_pers_proveedor_1" model="res.partner">
+        <field name="name">Carlos Rivera</field>
+        <field name="parent_id" ref="partner_emp_proveedor_1"/>
+        <field name="tipo_documento">ci</field>
+        <field name="numero_documento">6549871 SC</field>
+        <field name="email">carlos@textilsur.bo</field>
+        <field name="phone">+591 78451236</field>
+        <field name="es_proveedor_textil">1</field>
+    </record>
+
+    <!-- Puedes continuar agregando más registros como estos -->
 </odoo>

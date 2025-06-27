@@ -1,66 +1,42 @@
 {
     'name': 'Maquiser Core',
     'version': '1.0',
-    'summary': 'Sistema textil para Maquiser SRL',
-    'description': 'Gestión completa de producción textil y uniformología',
-    'author': 'Yarel',
+    'category': 'Manufacturing/Textil',  # ¡Clave para agrupación en Apps!
+    'summary': 'Sistema ERP textil para Maquiser SRL',
+    'description': """
+        Módulo central para gestión de producción textil, inventario y ventas.
+        Incluye personalización de productos, contactos y flujos de producción.
+    """,
+    'author': 'Tu Nombre',
+    'website': 'https://www.maquiser.com',
     'depends': [
         'base', 
-        'web', 
-        'mail', 
         'product',
-        'stock',  # Para gestión de inventario
-        'mrp',    # Para manufactura
-        #'quality_control', # Para control de calidad
-        'l10n_bo'  # Localización boliviana
+        'stock',       # Inventario
+        'mrp',         # Manufactura
+        'sale',        # Ventas (opcional si necesitas cotizaciones)
+        'purchase',    # Compras (opcional)
+        'l10n_bo'      # Localización boliviana
     ],
     'data': [
-        # Security
+        # SECURITY (debe ir primero)
         'security/security_groups.xml',
         'security/ir.model.access.csv',
         'security/usuarios.xml',
         
-        # Data
-        'data/company_data.xml',
-        'data/lang_es_bo.xml',
+        # DATA
+        'data/partner_categories.xml',
         'data/partner_data.xml',
-        #'data/product_data.xml',
-        #'data/uniformology_data.xml',  # Nuevo
-        #'data/production_data.xml',    # Nuevo
-        #'data/quality_checks.xml',     # Nuevo
+        'data/product_data.xml',
         
-        # Views
-        'views/menu.xml',
+        # VIEWS
         'views/partner_views.xml',
-        #'views/product_views.xml',     # Nuevo
-        #'views/uniformology_views.xml',# Nuevo
-        #'views/production_views.xml',  # Nuevo
-        #'views/quality_views.xml'      # Nuevo
+        'views/product_views.xml',
     ],
-    'demo': [],
+    'demo': [
+        'demo/product_demo.xml',  # Datos demo opcionales
+    ],
     'installable': True,
-    'application': True,
+    'application': True,  # Aparecerá en el menú Apps
     'license': 'LGPL-3',
 }
-
-# {
-#     'name': 'Maquiser Core',
-#     'version': '1.0',
-#     'summary': 'Módulo base para Maquiser SRL',
-#     'description': 'Configuración inicial de la empresa textil',
-#     'author': 'Tu Nombre',
-#     'depends': ['base', 'web', 'mail', 'product', 'l10n_bo'],
-#     'data': [
-#         'security/security_groups.xml',
-#         'security/usuarios.xml',
-#         'data/company_data.xml',
-#         'data/lang_es_bo.xml',
-#         'data/partner_data.xml',
-#         'data/product_data.xml',
-#         'views/menu.xml',
-#         'views/partner_views.xml'
-#     ],
-#     'installable': True,
-#     'application': True,
-#     'license': 'LGPL-3',
-# }

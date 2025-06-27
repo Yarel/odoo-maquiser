@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
-     <!-- Grupos Específicos de Maquiser -->
+    <!-- Grupos de Seguridad para Maquiser -->
     <record id="group_maquiser_admin" model="res.groups">
         <field name="name">Administrador Maquiser</field>
         <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
         <field name="category_id" ref="base.module_category_administration"/>
-        <!-- Quitar la relación inversa con usuarios aquí -->
     </record>
     
     <record id="group_maquiser_produccion" model="res.groups">

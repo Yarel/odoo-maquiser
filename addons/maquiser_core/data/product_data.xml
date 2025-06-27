@@ -1,32 +1,62 @@
+<!-- maquiser_core/data/product_data.xml -->
 <odoo>
-    <!-- Categorías de Productos -->
-    <record id="product_category_prendas" model="product.category">
-        <field name="name">Prendas de Vestir</field>
-    </record>
+  <record id="product_uniforme_escolar_varon" model="product.template">
+    <field name="name">Uniforme escolar varón</field>
+    <field name="type">product</field>
+    <field name="list_price">180.00</field>
+    <field name="standard_price">100.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Drill azul 65% poliéster / 35% algodón</field>
+  </record>
 
-    <!-- Productos -->
-    <record id="product_blusa_termica" model="product.product">
-        <field name="name">Blusa térmica</field>
-        <field name="categ_id" ref="product_category_prendas"/>
-        <field name="detailed_type">product</field> <!-- 'product' es válido para almacenable -->
-        <field name="list_price">120.00</field>
-        <field name="standard_price">80.00</field>
-    </record>
+  <record id="product_uniforme_escolar_mujer" model="product.template">
+    <field name="name">Uniforme escolar mujer</field>
+    <field name="type">product</field>
+    <field name="list_price">185.00</field>
+    <field name="standard_price">105.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Drill rojo vino / camisa blanca popelina</field>
+  </record>
 
-    <record id="product_polera_tactica" model="product.product">
-        <field name="name">Polera táctica</field>
-        <field name="categ_id" ref="product_category_prendas"/>
-        <field name="detailed_type">product</field> <!-- Cambiado de 'type' a 'detailed_type' -->
-        <field name="list_price">150.00</field>
-        <field name="standard_price">100.00</field>
-    </record>
+  <record id="product_uniforme_industrial" model="product.template">
+    <field name="name">Uniforme industrial</field>
+    <field name="type">product</field>
+    <field name="list_price">210.00</field>
+    <field name="standard_price">130.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Gabardina ignífuga 100% algodón</field>
+  </record>
 
-    <record id="product_uniforme_tactico" model="product.product">
-        <field name="name">Uniforme táctico multicam</field>
-        <field name="detailed_type">product</field>
-        <field name="categ_id" ref="product_category_prendas"/>
-        <field name="list_price">450.00</field>
-        <field name="standard_price">320.00</field>
-        <field name="weight">1.2</field>
-    </record>
+  <record id="product_bata_medica" model="product.template">
+    <field name="name">Bata médica blanca</field>
+    <field name="type">product</field>
+    <field name="list_price">160.00</field>
+    <field name="standard_price">90.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Popelina blanca</field>
+  </record>
+
+  <record id="product_pijama_hospitalaria" model="product.template">
+    <field name="name">Pijama hospitalaria</field>
+    <field name="type">product</field>
+    <field name="list_price">170.00</field>
+    <field name="standard_price">95.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Tergal azul hospitalario</field>
+  </record>
 </odoo>

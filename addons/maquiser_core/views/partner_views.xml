@@ -1,44 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_maquiser_partner_tree" model="ir.ui.view">
-        <field name="name">maquiser.partner.tree</field>
+    <!-- Vista de Contactos Heredada -->
+    <record id="view_partner_form_maquiser" model="ir.ui.view">
+        <field name="name">res.partner.form.maquiser</field>
         <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="city"/>
-                <field name="vat"/>
-                <field name="customer_rank"/>
-                <field name="supplier_rank"/>
-            </tree>
+            <!-- Campos en pestaña general -->
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="tipo_documento" widget="radio"/>
+                <field name="numero_documento"/>
+                <field name="empresa_asociada"/>
+            </xpath>
+
+            <!-- Pestaña personalizada -->
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="Datos Textiles" name="maquiser_textil_data">
+                    <group>
+                        <field name="es_cliente_uniformes"/>
+                        <field name="es_proveedor_textil"/>
+                        <field name="categoria_textil" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
 
-    <record id="view_maquiser_partner_form" model="ir.ui.view">
-        <field name="name">maquiser.partner.form</field>
-        <field name="model">res.partner</field>
-        <field name="arch" type="xml">
-            <form>
-                <group>
-                    <field name="name"/>
-                    <field name="vat"/>
-                    <field name="street"/>
-                    <field name="city"/>
-                    <field name="country_id"/>
-                    <field name="company_type"/>
-                </group>
-            </form>
-        </field>
-    </record>
+    <!-- Menú Principal -->
+    <menuitem id="menu_maquiser_root" name="Maquiser" sequence="10"/>
 
-    <record id="action_maquiser_partner" model="ir.actions.act_window">
+    <!-- Submenú Contactos -->
+    <menuitem id="menu_maquiser_contactos" 
+              name="Contactos" 
+              parent="menu_maquiser_root" 
+              sequence="20"/>
+
+    <!-- Acción para Contactos -->
+    <record id="action_res_partner_maquiser" model="ir.actions.act_window">
         <field name="name">Contactos Maquiser</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'default_company_type': 'company'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Crea tu primer contacto</p>
+        </field>
     </record>
 
-    <menuitem id="menu_maquiser_partner" name="Contactos"
-              parent="menu_maquiser_root"
-              action="action_maquiser_partner"
-              sequence="70"/>
+    <!-- Enlace Menú-Acción -->
+    <menuitem id="menu_res_partner_maquiser" 
+              name="Todos los Contactos" 
+              parent="menu_maquiser_contactos" 
+              action="action_res_partner_maquiser" 
+              sequence="10"/>
 </odoo>
-

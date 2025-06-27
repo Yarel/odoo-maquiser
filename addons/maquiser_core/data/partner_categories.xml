@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Categorías para clientes -->
+    <record id="cat_cliente_vip" model="res.partner.category">
+        <field name="name">Cliente VIP</field>
+        <field name="textil_related">True</field>
+    </record>
+    
+    <record id="cat_cliente_mayorista" model="res.partner.category">
+        <field name="name">Mayorista</field>
+        <field name="textil_related">True</field>
+    </record>
+
+    <!-- Categorías para proveedores -->
+    <record id="cat_proveedor_estrategico" model="res.partner.category">
+        <field name="name">Proveedor Estratégico</field>
+        <field name="textil_related">True</field>
+    </record>
+    
+    <record id="cat_proveedor_telas" model="res.partner.category">
+        <field name="name">Proveedor de Telas</field>
+        <field name="textil_related">True</field>
+    </record>
+</odoo>

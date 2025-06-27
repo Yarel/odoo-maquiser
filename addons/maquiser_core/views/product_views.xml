@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Formulario de Productos (Heredado) -->
+    <record id="view_product_template_form_maquiser" model="ir.ui.view">
+        <field name="name">product.template.form.maquiser</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Campos personalizados en sección general -->
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="tipo_producto_textil" widget="radio"/>
+                <field name="composicion_textil"/>
+            </xpath>
+
+            <!-- Pestaña adicional para datos textiles -->
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page string="Detalles Textiles" name="textile_details">
+                    <group>
+                        <field name="tipo_tela"/>
+                        <field name="gramaje"/>
+                        <field name="color_index" widget="color_picker"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vista de árbol personalizada -->
+    <record id="view_product_template_tree_maquiser" model="ir.ui.view">
+        <field name="name">product.template.tree.maquiser</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="tipo_producto_textil"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
