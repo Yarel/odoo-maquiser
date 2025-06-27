@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- Proveedores -->
+  <record id="partner_proveedor_1" model="res.partner">
+    <field name="name">Proveedor 1</field>
+    <field name="supplier_rank">1</field>
+  </record>
+  <record id="partner_proveedor_2" model="res.partner">
+    <field name="name">Proveedor 2</field>
+    <field name="supplier_rank">1</field>
+  </record>
+  <record id="partner_proveedor_3" model="res.partner">
+    <field name="name">Proveedor 3</field>
+    <field name="supplier_rank">1</field>
+  </record>
+  <record id="partner_proveedor_4" model="res.partner">
+    <field name="name">Proveedor 4</field>
+    <field name="supplier_rank">1</field>
+  </record>
+  <record id="partner_proveedor_5" model="res.partner">
+    <field name="name">Proveedor 5</field>
+    <field name="supplier_rank">1</field>
+  </record>
+
+  <!-- Equipos de Fábrica -->
+  <record id="partner_equipo_1" model="res.partner">
+    <field name="name">Equipo Corte Láser</field>
+    <field name="comment">Equipo de fábrica para corte de metales</field>
+  </record>
+
+  <!-- Pasarela de Pago -->
+  <record id="partner_pasarela_pago" model="res.partner">
+    <field name="name">PasarelaPagos S.R.L.</field>
+    <field name="email">soporte@pasarelapagos.com</field>
+    <field name="comment">Integración para pagos</field>
+  </record>
+</odoo>
+

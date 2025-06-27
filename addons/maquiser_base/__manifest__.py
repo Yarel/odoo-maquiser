@@ -1,0 +1,26 @@
+{
+    'name': 'Maquiser Base',
+    'version': '1.0',
+    'summary': 'Módulo base de configuración inicial Maquiser',
+    'author': 'Yarel',
+    'category': 'Base',
+    'depends': [
+        'base',
+        'mail',
+        'sale',
+        'purchase',
+        'stock',
+        'mrp',
+        'hr',
+        'account',
+        'web',
+    ],
+    'data': [
+        'data/usuarios.xml',
+        'data/productos.xml',
+        'data/reportes.xml',
+        'views/menu.xml',
+    ],
+    'installable': True,
+    'application': True,
+}
