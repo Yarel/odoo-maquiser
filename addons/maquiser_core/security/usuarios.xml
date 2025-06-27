@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Usuarios Administradores -->
+    <record id="user_admin_yarel" model="res.users">
+        <field name="name">Yarel</field>
+        <field name="login">yarel@maquiser.com</field>
+        <field name="password">demo123</field>
+        <field name="groups_id" eval="[(6, 0, [
+            ref('group_maquiser_admin'),
+            ref('base.group_system'),
+            ref('base.group_user')
+        ])]"/>
+    </record>
+
+    <record id="user_admin_fabricio" model="res.users">
+        <field name="name">Fabricio</field>
+        <field name="login">fabricio@maquiser.com</field>
+        <field name="password">demo123</field>
+        <field name="groups_id" eval="[(6, 0, [
+            ref('group_maquiser_admin'),
+            ref('base.group_system'),
+            ref('base.group_user')
+        ])]"/>
+    </record>
+
+    <!-- Jefe de Producción -->
+    <record id="user_jefe_produccion" model="res.users">
+        <field name="name">Israel</field>
+        <field name="login">israel@maquiser.com</field>
+        <field name="password">demo123</field>
+        <field name="groups_id" eval="[(6, 0, [
+            ref('group_maquiser_produccion'),
+            ref('base.group_user')
+        ])]"/>
+    </record>
+
+    <!-- Jefe de Ventas -->
+    <record id="user_jefe_ventas" model="res.users">
+        <field name="name">Natali</field>
+        <field name="login">natali@maquiser.com</field>
+        <field name="password">demo123</field>
+        <field name="groups_id" eval="[(6, 0, [
+            ref('group_maquiser_ventas'),
+            ref('base.group_user')
+        ])]"/>
+    </record>
+
+    <!-- Empleado General -->
+    <record id="user_empleado_fabri" model="res.users">
+        <field name="name">Fabri</field>
+        <field name="login">fabri@maquiser.com</field>
+        <field name="password">demo123</field>
+        <field name="groups_id" eval="[(6, 0, [
+            ref('group_maquiser_empleado'),
+            ref('base.group_user')
+        ])]"/>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<odoo>
+    <record id="res_partner_ejercito" model="res.partner">
+        <field name="name">Ejército de Bolivia</field>
+        <field name="vat">123456789</field>
+        <field name="customer_rank">1</field>
+        <field name="street">Av. 6 de Agosto</field>
+        <field name="city">La Paz</field>
+        <field name="country_id" ref="base.bo"/>
+        <field name="company_type">company</field>
+    </record>
+
+    <record id="res_partner_proveedor_telas" model="res.partner">
+        <field name="name">Textiles Andinos S.A.</field>
+        <field name="vat">987654321</field>
+        <field name="supplier_rank">1</field>
+        <field name="street">Calle Industrial 456</field>
+        <field name="city">Santa Cruz</field>
+        <field name="country_id" ref="base.bo"/>
+        <field name="company_type">company</field>
+    </record>
+</odoo>

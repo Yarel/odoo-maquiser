@@ -1,0 +1,32 @@
+<odoo>
+    <!-- Categorías de Productos -->
+    <record id="product_category_prendas" model="product.category">
+        <field name="name">Prendas de Vestir</field>
+    </record>
+
+    <!-- Productos -->
+    <record id="product_blusa_termica" model="product.product">
+        <field name="name">Blusa térmica</field>
+        <field name="categ_id" ref="product_category_prendas"/>
+        <field name="detailed_type">product</field> <!-- 'product' es válido para almacenable -->
+        <field name="list_price">120.00</field>
+        <field name="standard_price">80.00</field>
+    </record>
+
+    <record id="product_polera_tactica" model="product.product">
+        <field name="name">Polera táctica</field>
+        <field name="categ_id" ref="product_category_prendas"/>
+        <field name="detailed_type">product</field> <!-- Cambiado de 'type' a 'detailed_type' -->
+        <field name="list_price">150.00</field>
+        <field name="standard_price">100.00</field>
+    </record>
+
+    <record id="product_uniforme_tactico" model="product.product">
+        <field name="name">Uniforme táctico multicam</field>
+        <field name="detailed_type">product</field>
+        <field name="categ_id" ref="product_category_prendas"/>
+        <field name="list_price">450.00</field>
+        <field name="standard_price">320.00</field>
+        <field name="weight">1.2</field>
+    </record>
+</odoo>

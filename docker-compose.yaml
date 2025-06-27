@@ -12,7 +12,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
 
   odoo:
     image: odoo:16
@@ -20,15 +19,18 @@ services:
       db:
         condition: service_healthy
     ports:
-      - "8069:8069"  # Odoo estará disponible en http://localhost:8069
+      - "8069:8069"
       - "8072:8072"
     volumes:
       - ./addons:/mnt/extra-addons
-      - ./config/odoo.conf:/etc/odoo/odoo.conf
+      - ./config:/etc/odoo
       - ./data/filestore:/var/lib/odoo/filestore
+      #- /usr/lib/python3/dist-packages/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons:ro
     environment:
       - HOST=db
-    restart: unless-stopped
+      - USER=odoo
+      - PASSWORD=odoo
+      - DB_FILTER=^maquiser_.*$
 
 #services:
 #  db:

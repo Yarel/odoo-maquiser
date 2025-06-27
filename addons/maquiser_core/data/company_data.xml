@@ -1,0 +1,16 @@
+<odoo>
+    <record id="base.main_company" model="res.company">
+        <field name="name">Maquiser SRL</field>
+        <field name="street">Avenida Tarapacá #1200, entre calle 6 y 7</field>
+        <field name="city">El Alto</field>
+        <field name="country_id" ref="base.bo"/>
+    <!-- Elimina state_id o hazlo opcional -->
+        <field name="state_id" eval="False" />
+        <field name="zip">99999</field>
+        <field name="phone">+591 2 1234567</field>
+        <field name="email">info@maquiser.com.bo</field>
+        <field name="website">www.maquiser.com.bo</field>
+        <field name="vat">198956026</field>
+        <field name="textile_specialization">clothing</field>
+</record>
+</odoo>
