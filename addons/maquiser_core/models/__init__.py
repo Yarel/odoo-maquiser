@@ -1,6 +1,7 @@
 from . import partner
 from . import partner_category
 from . import product
+from . import uniformology 
 
 
 from odoo import api, SUPERUSER_ID

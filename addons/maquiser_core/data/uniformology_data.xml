@@ -1,0 +1,16 @@
+<odoo>
+    <record id="uniform_design_1" model="maquiser.uniformology">
+        <field name="name">Uniforme Escolar Básico</field>
+        <field name="talla">M</field>
+        <field name="material">Drill azul 65% poliéster / 35% algodón</field>
+        <field name="descripcion">Diseño básico para escuelas públicas</field>
+        <field name="activo">True</field>
+    </record>
+    <record id="uniform_design_2" model="maquiser.uniformology">
+        <field name="name">Uniforme Industrial Ignífugo</field>
+        <field name="talla">L</field>
+        <field name="material">Gabardina 100% algodón ignífugo</field>
+        <field name="descripcion">Protección para ambientes industriales</field>
+        <field name="activo">True</field>
+    </record>
+</odoo>

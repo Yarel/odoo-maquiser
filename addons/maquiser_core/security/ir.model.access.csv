@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_categoria_ventas,ventas,base.model_res_partner,group_maquiser_ventas,1,1,1,0
 access_categoria_ventas_product,ventas,product.model_product_template,group_maquiser_ventas,1,1,1,0
+access_uniformology_user,uniformology user,model_maquiser_uniformology,base.group_user,1,1,1,1

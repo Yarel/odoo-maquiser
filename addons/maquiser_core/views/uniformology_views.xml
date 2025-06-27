@@ -1,0 +1,48 @@
+<odoo>
+    <menuitem id="menu_maquiser_root"
+          name="Maquiser"
+          sequence="10"
+          groups="base.group_user"/>
+          
+    <record id="view_uniformology_tree" model="ir.ui.view">
+        <field name="name">maquiser.uniformology.tree</field>
+        <field name="model">maquiser.uniformology</field>
+        <field name="arch" type="xml">
+            <tree string="Diseños de Uniformes">
+                <field name="name"/>
+                <field name="talla"/>
+                <field name="material"/>
+                <field name="activo"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_uniformology_form" model="ir.ui.view">
+        <field name="name">maquiser.uniformology.form</field>
+        <field name="model">maquiser.uniformology</field>
+        <field name="arch" type="xml">
+            <form string="Diseño de Uniforme">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="talla"/>
+                        <field name="material"/>
+                        <field name="descripcion"/>
+                        <field name="activo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción -->
+    <record id="action_uniformology" model="ir.actions.act_window">
+        <field name="name">Uniformología</field>
+        <field name="res_model">maquiser.uniformology</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="menu_maquiser_uniformology" name="Uniformología" parent="menu_maquiser_root" sequence="40"/>
+    <menuitem id="menu_uniformology_main" name="Diseños de Uniformes" parent="menu_maquiser_uniformology" action="action_uniformology"/>
+</odoo>

@@ -14,12 +14,12 @@
         'product',
         'stock',       # Inventario
         'mrp',         # Manufactura
-        'sale',        # Ventas (opcional si necesitas cotizaciones)
-        'purchase',    # Compras (opcional)
+        'sale',        # Ventas 
+        'purchase',    # Compras
         'l10n_bo'      # Localización boliviana
     ],
     'data': [
-        # SECURITY (debe ir primero)
+        # SECURITY
         'security/security_groups.xml',
         'security/ir.model.access.csv',
         'security/usuarios.xml',
@@ -28,15 +28,18 @@
         'data/partner_categories.xml',
         'data/partner_data.xml',
         'data/product_data.xml',
+        'data/uniformology_data.xml',
         
         # VIEWS
         'views/product_views.xml',
         'views/partner_views.xml',
+        'views/uniformology_views.xml',
+
     ],
     'demo': [
         'demo/product_demo.xml',  # Datos demo opcionales
     ],
     'installable': True,
-    'application': True,  # Aparecerá en el menú Apps
+    'application': True, 
     'license': 'LGPL-3',
 }
