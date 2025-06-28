@@ -1,0 +1,35 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - add-modules
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Configurar clave SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Subir código al servidor con rsync
+      run: |
+        rsync -az --exclude=".git" --delete ./ ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/odoo-maquiser/
+
+    - name: Ejecutar comandos en el servidor remoto
+      run: |
+        ssh ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
+          cd /home/ubuntu/odoo-maquiser
+          make validate
+          make install-module MODULE=maquiser_core
+          docker-compose restart
+        EOF
