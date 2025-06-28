@@ -58,4 +58,66 @@
     <field name="tipo_producto_textil">uniforme</field>
     <field name="composicion_textil">Tergal azul hospitalario</field>
   </record>
+  
+   <record id="product_tela_jean_azul" model="product.template">
+    <field name="name">Tela Jean Azul</field>
+    <field name="type">product</field>
+    <field name="list_price">55.00</field>
+    <field name="standard_price">30.00</field>
+    <field name="sale_ok" eval="False"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="categ_id" ref="product.product_category_all"/>
+    <field name="tipo_producto_textil">tela</field>
+    <field name="composicion_textil">Jean 100% algodón prelavado</field>
+    <field name="tipo_tela">algodon</field>
+    <field name="gramaje">300</field>
+    <field name="color_index">34</field>
+  </record>
+
+  <record id="product_tela_poliester_fluor" model="product.template">
+    <field name="name">Tela Poliéster Fluorescente</field>
+    <field name="type">product</field>
+    <field name="list_price">62.00</field>
+    <field name="standard_price">35.00</field>
+    <field name="sale_ok" eval="False"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="tipo_producto_textil">tela</field>
+    <field name="composicion_textil">Poliéster 100%, alta visibilidad</field>
+    <field name="tipo_tela">poliéster</field>
+    <field name="gramaje">200</field>
+    <field name="color_index">47</field>
+  </record>
+
+  <record id="product_insumo_hilo_poliester_blanco" model="product.template">
+    <field name="name">Hilo Poliéster Blanco 40</field>
+    <field name="type">product</field>
+    <field name="list_price">18.00</field>
+    <field name="standard_price">10.00</field>
+    <field name="sale_ok" eval="False"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="tipo_producto_textil">insumo</field>
+    <field name="composicion_textil">Poliéster torcido 40</field>
+  </record>
+
+  <record id="product_uniforme_oficial_militar" model="product.template">
+    <field name="name">Uniforme Oficial Militar</field>
+    <field name="type">product</field>
+    <field name="list_price">290.00</field>
+    <field name="standard_price">180.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Ripstop camuflado / camisas drill verde</field>
+  </record>
+
+  <record id="product_uniforme_tactico_negro" model="product.template">
+    <field name="name">Uniforme Táctico Negro</field>
+    <field name="type">product</field>
+    <field name="list_price">320.00</field>
+    <field name="standard_price">200.00</field>
+    <field name="sale_ok" eval="True"/>
+    <field name="purchase_ok" eval="True"/>
+    <field name="tipo_producto_textil">uniforme</field>
+    <field name="composicion_textil">Gabardina negra gruesa 100% algodón</field>
+  </record>
 </odoo>

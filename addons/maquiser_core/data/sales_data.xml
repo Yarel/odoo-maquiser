@@ -1,0 +1,38 @@
+<odoo>
+    <!-- Ventas -->
+    <record id="sale_001" model="sale.order">
+        <field name="partner_id" ref="partner_emp_uniformes_1"/>
+        <field name="date_order">2025-06-01 10:00:00</field>
+        <field name="user_id" ref="base.user_root"/> <!-- Cambia según usuario -->
+        <field name="state">sale</field>
+    </record>
+
+    <record id="sale_001_line_1" model="sale.order.line">
+        <field name="order_id" ref="sale_001"/>
+        <field name="product_id" ref="product_uniforme_escolar_varon"/>
+        <field name="product_uom_qty">50</field>
+        <field name="price_unit">180.00</field>
+    </record>
+
+    <record id="sale_001_line_2" model="sale.order.line">
+        <field name="order_id" ref="sale_001"/>
+        <field name="product_id" ref="product_pijama_hospitalaria"/>
+        <field name="product_uom_qty">20</field>
+        <field name="price_unit">170.00</field>
+    </record>
+
+    <!-- Otra venta -->
+    <record id="sale_002" model="sale.order">
+        <field name="partner_id" ref="partner_emp_uniformes_2"/>
+        <field name="date_order">2025-06-10 14:30:00</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="state">sale</field>
+    </record>
+
+    <record id="sale_002_line_1" model="sale.order.line">
+        <field name="order_id" ref="sale_002"/>
+        <field name="product_id" ref="product_uniforme_industrial"/>
+        <field name="product_uom_qty">100</field>
+        <field name="price_unit">210.00</field>
+    </record>
+</odoo>

@@ -23,6 +23,15 @@
         <field name="email">ventas@elaltotextil.bo</field>
     </record>
 
+    <record id="proveedor_telas_cortintex" model="res.partner">
+        <field name="name">Cortintex Telas Ltda.</field>
+        <field name="street">Zona Industrial #45</field>
+        <field name="phone">+591-2-9876543</field>
+        <field name="email">ventas@cortintex.bo</field>
+        <field name="category_id" eval="[(4, ref('cat_proveedor_telas'))]"/>
+        <field name="supplier_rank">1</field>
+    </record>
+
     <!-- Personas (clientes asociados) -->
     <record id="partner_pers_cliente_1" model="res.partner">
         <field name="name">Juan Pérez</field>

@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Compras -->
+    <record id="purchase_001" model="purchase.order">
+        <field name="partner_id" ref="partner_emp_proveedor_1"/>
+        <field name="date_order">2025-05-15 09:00:00</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="state">purchase</field>
+    </record>
+
+    <record id="purchase_001_line_1" model="purchase.order.line">
+        <field name="order_id" ref="purchase_001"/>
+        <field name="product_id" ref="product_bata_medica"/>
+        <field name="product_qty">200</field>
+        <field name="price_unit">90.00</field>
+    </record>
+
+    <!-- Otra compra -->
+    <record id="purchase_002" model="purchase.order">
+        <field name="partner_id" ref="proveedor_telas_cortintex"/>
+        <field name="date_order">2025-05-20 11:00:00</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="state">purchase</field>
+    </record>
+
+    <record id="purchase_002_line_1" model="purchase.order.line">
+        <field name="order_id" ref="purchase_002"/>
+        <field name="product_id" ref="product_uniforme_escolar_mujer"/>
+        <field name="product_qty">150</field>
+        <field name="price_unit">185.00</field>
+    </record>
+</odoo>

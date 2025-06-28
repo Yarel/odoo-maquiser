@@ -15,6 +15,7 @@
         'stock',       # Inventario
         'mrp',         # Manufactura
         'sale',        # Ventas 
+        'sale_management',
         'purchase',    # Compras
         'l10n_bo'      # Localización boliviana
     ],
@@ -29,6 +30,8 @@
         'data/partner_data.xml',
         'data/product_data.xml',
         'data/uniformology_data.xml',
+        'data/sales_data.xml',
+        'data/purchase_data.xml',
         
         # VIEWS
         'views/product_views.xml',
